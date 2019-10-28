@@ -16,4 +16,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
-       
+    volumes:
+      - Mochila:/var/lib/mysql
+
+volumes:
+  Mochila:
