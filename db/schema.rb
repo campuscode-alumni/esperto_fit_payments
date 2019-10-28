@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 201909156164408) do
 
-  create_table "clients_classes", force: :cascade do |t|
+  create_table "clients_classes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "single_class_id"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 201909156164408) do
     t.index ["single_class_id"], name: "index_clients_classes_on_single_class_id"
   end
 
-  create_table "cupon_burns", force: :cascade do |t|
+  create_table "cupon_burns", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "cupon_id"
     t.integer "registration_id"
     t.datetime "created_at", null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 201909156164408) do
     t.index ["registration_id"], name: "index_cupon_burns_on_registration_id"
   end
 
-  create_table "cupons", force: :cascade do |t|
+  create_table "cupons", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "promotion_id"
     t.string "code"
     t.datetime "created_at", null: false
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 201909156164408) do
     t.index ["registration_id"], name: "index_cupons_on_registration_id"
   end
 
-  create_table "pay_methods", force: :cascade do |t|
+  create_table "pay_methods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 201909156164408) do
     t.integer "limit_days"
   end
 
-  create_table "payment_transactions", force: :cascade do |t|
+  create_table "payment_transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "code"
     t.float "value"
     t.date "date_payment"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 201909156164408) do
     t.index ["user_id"], name: "index_payment_transactions_on_user_id"
   end
 
-  create_table "payments", force: :cascade do |t|
+  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "value"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 201909156164408) do
     t.index ["registration_id"], name: "index_payments_on_registration_id"
   end
 
-  create_table "payments_releases", force: :cascade do |t|
+  create_table "payments_releases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.float "value"
     t.integer "payment_id"
@@ -82,14 +82,14 @@ ActiveRecord::Schema.define(version: 201909156164408) do
     t.index ["payment_id"], name: "index_payments_releases_on_payment_id"
   end
 
-  create_table "plans", force: :cascade do |t|
+  create_table "plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "value"
   end
 
-  create_table "promotions", force: :cascade do |t|
+  create_table "promotions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "value_percent_discount"
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 201909156164408) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "registrations", force: :cascade do |t|
+  create_table "registrations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
@@ -115,7 +115,7 @@ ActiveRecord::Schema.define(version: 201909156164408) do
     t.index ["unity_id"], name: "index_registrations_on_unity_id"
   end
 
-  create_table "single_classes", force: :cascade do |t|
+  create_table "single_classes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
@@ -126,13 +126,13 @@ ActiveRecord::Schema.define(version: 201909156164408) do
     t.index ["registration_id"], name: "index_single_classes_on_registration_id"
   end
 
-  create_table "unities", force: :cascade do |t|
+  create_table "unities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false, null: false
