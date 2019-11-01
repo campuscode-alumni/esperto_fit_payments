@@ -6,7 +6,7 @@ feature 'user navigation' do
     
     login_as(user)
     visit root_path
-
+  
     expect(page).not_to have_content('BEM VINDO AO SISTEMA ADMINISTRADOR')
   end
 

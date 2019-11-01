@@ -51,7 +51,7 @@ feature 'new registration'do
     select 'Executivo', from: 'Plano'
     select 'Boleto', from: 'Metodo de pagamento'
     click_on 'Enviar'
-
+  
     expect(page).to have_css('h4', text: 'Fulano de tal')
     expect(page).to have_css('p', text: '345678098')
     expect(page).to have_css('p', text: 'Paulista')

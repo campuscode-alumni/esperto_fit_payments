@@ -14,9 +14,9 @@
               <th>Método de pagamento</th>
               <th>Status</th>
             </thead>
-            <% @registration.payments.each do |payment| %>
+            <% @registration.payments.each_with_index do |payment,index| %>
               <tr id="payment-<%=payment.id%>">
-                <td><%= "Pagamento #{payment.id}"%></td>
+                <td><%= "Pagamento #{index + 1}"%></td>
                 <td><%= payment.value %></td>
                 <td><%= payment.dt_venc %></td>
                 <td><%= payment.pay_method.name %></td>

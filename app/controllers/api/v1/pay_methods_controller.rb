@@ -5,11 +5,10 @@ module Api::V1
       @pay_method = PayMethod.new(set_params)
       return render json: @pay_method, status: 201 if @pay_method.save!
     end
-    
     def index
       @pay_method = PayMethod.all
-      @pay_method = @pay_method.where('name LIKE ?', params[:name]) if params[:name] != nil
-      return render json: @pay_method, only: [:id, :name, :tax, :limit_days], status: :ok if @pay_method !=nil
+      @pay_method = @pay_method.where('name LIKE ?', params[:name]) if params[:name] != nil 
+      return render json: @pay_method , each_serializer: PayMethodsSerializer, status: :ok if @pay_method !=nil
     end
 
     private

@@ -6,6 +6,3 @@ WORKDIR /teste
 ADD Gemfile /teste/Gemfile
 ADD Gemfile.lock /teste/Gemfile.lock
 RUN bundle install
-
-EXPOSE 3000
-
