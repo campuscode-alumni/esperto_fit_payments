@@ -9,7 +9,7 @@ module Api::V1
 
     def index
       @unity = Unity.all
-      return render json: @unity, only: [:name, :id], status: 200 if @unity != nil
+      return render json: @unity, each_serializer: SimpleUnitySerializer, status: 200 if @unity != nil
     end
 
     private

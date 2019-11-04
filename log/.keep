@@ -1,0 +1,20 @@
+ <% if user_signed_in? %>
+              <li class="nav-item px-lg-4">
+                <%= link_to 'Matrículas', registrations_path, class: "nav-link text-uppercase text-expanded"%>
+              </li>
+              <li class="nav-item px-lg-4">
+                <%= link_to 'Promoções', promotions_path, class: "nav-link text-uppercase text-expanded" %>
+              </li>
+              <li class="nav-item px-lg-4">
+                <%= link_to 'Nova Matrícula', new_registration_path, class: "nav-link text-uppercase text-expanded"%>
+              </li>
+              <li class="nav-item px-lg-4">
+                <%= link_to "Criar metodo de pagamento", new_pay_method_path, class: "nav-link text-uppercase text-expanded"%>
+              <li class="nav-item px-lg-4">
+                <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: "nav-link text-uppercase text-expanded" %>
+              </li>
+            <% else %>
+              <li class="nav-item px-lg-4">
+                <%= link_to 'Entrar', new_user_session_path, class: "nav-link text-uppercase text-expanded" %>
+              </li>
+            <% end %>
