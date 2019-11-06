@@ -1,6 +1,8 @@
 FROM ruby:2.6.4
 RUN apt-get update
 RUN apt-get install default-mysql-client-core -y
+RUN apt-get install rsyslog  -y
+RUN /etc/init.d/rsyslog start
 RUN mkdir /teste
 WORKDIR /teste
 ADD Gemfile /teste/Gemfile
