@@ -47,6 +47,11 @@ Rails.application.configure do
   config.log_level = :error
 
   #RAILS_DEFAULT_LOGGER = 
-  config.logger = ActiveSupport::TaggedLogging.new(Logger::Syslog.new('mygreatapp', Syslog::LOG_LOCAL7))
-                      #   Syslog::Logger.new ('mygreatapp', Syslog::LOG_LOCAL7)                 
+
+#datetime_format = "%Y-%m-%d %H:%M:%S"
+  logger           = ActiveSupport::Logger.new(STDOUT)
+  #logger        = Logger::Syslog.new('mygreatapp')
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
+
+                  
 end
